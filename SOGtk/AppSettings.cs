@@ -9,5 +9,7 @@ namespace SOGtk
         public static List<SOWindow> ActiveWindows = new List<SOWindow>();
 
         public static Pixbuf ApplicationIcon { get; internal set; }
+
+        public static Gtk.Window MainWindow { get; internal set; }
     }
 }

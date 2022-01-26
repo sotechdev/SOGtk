@@ -75,5 +75,16 @@ namespace SOGtk
             if (AppSettings.ApplicationIcon != null)
                 Icon = AppSettings.ApplicationIcon;
         }
+        public ResponseType ShowInfoDialog(string message, string title = "Sucesso", ButtonsType buttons = ButtonsType.Ok)
+            => SOMessageBox.ShowDialog(this, message, title, MessageType.Info, buttons);
+
+        public ResponseType ShowErrorDialog(string message, string title = "Erro", ButtonsType buttons = ButtonsType.Ok)
+            => SOMessageBox.ShowDialog(this, message, title, MessageType.Error, buttons);
+
+        public ResponseType ShowWarnDialog(string message, string title = "Atenção", ButtonsType buttons = ButtonsType.Ok)
+            => SOMessageBox.ShowDialog(this, message, title, MessageType.Warning, buttons);
+
+        public ResponseType ShowQuestionDialog(string message, string title, ButtonsType buttons = ButtonsType.Ok)
+            => SOMessageBox.ShowDialog(this, message, title, MessageType.Question, buttons);
     }
 }

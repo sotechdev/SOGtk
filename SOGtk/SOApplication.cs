@@ -37,6 +37,7 @@ namespace SOGtk
 
         public void AddMainWindow(Gtk.Window window)
         {
+            AppSettings.MainWindow = window;
             AddWindow(window);
             window.Show();
         }
