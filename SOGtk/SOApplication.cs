@@ -20,7 +20,7 @@ namespace SOGtk
 
         private void SetupInternal()
         {
-            Gtk.Application.Init();
+            Init();
             Register(GLib.Cancellable.Current);
         }
 
