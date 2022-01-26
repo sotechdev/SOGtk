@@ -28,5 +28,11 @@ namespace SOGtk
         {
             Gtk.Application.Run();
         }
+
+        public void AddMainWindow(Gtk.Window window)
+        {
+            AddWindow(window);
+            window.Show();
+        }
     }
 }

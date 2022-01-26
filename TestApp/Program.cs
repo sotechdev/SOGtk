@@ -12,10 +12,7 @@ namespace TestApp
             var app = new SOApplication("org.TestApp.TestApp");
 
             var win = new MainWindow();
-            app.AddWindow(win);
-
-            win.Show();
-
+            app.AddMainWindow(win);
             app.Run();
         }
     }
