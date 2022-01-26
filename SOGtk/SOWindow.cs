@@ -2,6 +2,7 @@
 
 using System;
 using System.Linq;
+using System.Reflection;
 
 namespace SOGtk
 {
@@ -17,14 +18,25 @@ namespace SOGtk
             SetupInternal();
         }
 
-        public SOWindow(string title) : base(title)
+        public SOWindow(string gladeFile) : base(IntPtr.Zero)
         {
+            var builder = new Builder(Assembly.GetCallingAssembly(), gladeFile, null);
+            builder.Autoconnect(this);
+            Raw = builder.GetRawOwnedObject("Window");
+            SetupInternal();
+        }
+        public SOWindow(string title, string gladeFile)
+            : base(title)
+        {
+            var builder = new Builder(Assembly.GetCallingAssembly(), gladeFile, null);
+            builder.Autoconnect(this);
+            Raw = builder.GetRawOwnedObject("Window");
             SetupInternal();
         }
         public SOWindow(string title, string gladeFile, string windowName)
             : base(title)
         {
-            var builder = new Builder(gladeFile);
+            var builder = new Builder(Assembly.GetCallingAssembly(), gladeFile, null);
             builder.Autoconnect(this);
             Raw = builder.GetRawOwnedObject(windowName);
             SetupInternal();

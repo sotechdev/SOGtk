@@ -15,7 +15,7 @@ namespace TestApp
 
         private int _counter;
         public MainWindow()
-            : base(new Builder("MainWindow.glade"))
+            : base("MainWindow.glade")
         {
             _button1.Clicked += Button1_Clicked;
         }
