@@ -41,7 +41,8 @@ namespace SOGtk
             AddWindow(window);
             window.Show();
         }
-
+        public void SetIcon(string resourceName) =>
+            SetIcon(new Pixbuf(Assembly.GetCallingAssembly().GetResource(resourceName)));
         public void SetIcon(Gdk.Pixbuf icon) => 
             AppSettings.ApplicationIcon = icon;
 
