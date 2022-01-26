@@ -21,10 +21,32 @@ namespace SOGtk
         {
             SetupInternal();
         }
-
-        public SOWindow(Func<IntPtr> builder)
-            : base(builder())
+        public SOWindow(string title, string gladeFile, string windowName)
+            : base(title)
         {
+            var builder = new Builder(gladeFile);
+            builder.Autoconnect(this);
+            Raw = builder.GetRawOwnedObject(windowName);
+            SetupInternal();
+        }
+        public SOWindow(Builder builder)
+            : base(builder.GetRawOwnedObject("Window"))
+        {
+            builder.Autoconnect(this);
+            SetupInternal();
+        }
+        public SOWindow(Builder builder, string windowName)
+            : base(builder.GetRawOwnedObject(windowName))
+        {
+            builder.Autoconnect(this);
+            SetupInternal();
+        }
+
+        public SOWindow(Builder builder, string windowName, string title)
+            : base(builder.GetRawOwnedObject(windowName))
+        {
+            builder.Autoconnect(this);
+            Title = title;
             SetupInternal();
         }
 

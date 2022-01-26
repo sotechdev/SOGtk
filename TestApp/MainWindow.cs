@@ -14,13 +14,9 @@ namespace TestApp
         [UI] private Button _button1 = null;
 
         private int _counter;
-
-        public MainWindow() : this(new Builder("MainWindow.glade")) { }
-
-        private MainWindow(Builder builder) : base(builder.GetRawOwnedObject("MainWindow"))
+        public MainWindow()
+            : base(new Builder("MainWindow.glade"))
         {
-            builder.Autoconnect(this);
-
             _button1.Clicked += Button1_Clicked;
         }
 
