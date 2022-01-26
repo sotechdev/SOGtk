@@ -27,6 +27,7 @@ namespace SOGtk
             Init();
             Register(GLib.Cancellable.Current);
             SetIcon(Assembly.GetExecutingAssembly(), "LogoSOTech.png");
+            SOHelper.ApplyTheme("Dark");
         }
 
         public new void Run()
