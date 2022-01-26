@@ -37,6 +37,9 @@ namespace SOGtk
                 if (!AppSettings.ActiveWindows.Any())
                     Application.Quit();
             };
+
+            if (AppSettings.ApplicationIcon != null)
+                Icon = AppSettings.ApplicationIcon;
         }
     }
 }

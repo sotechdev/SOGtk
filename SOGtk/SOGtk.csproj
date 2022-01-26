@@ -13,6 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\LogoSOTech.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\LogoSOTech.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.*" />
   </ItemGroup>
 

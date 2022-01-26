@@ -13,6 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\icons8_request_service_128.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\icons8_request_service_128.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.*" />
   </ItemGroup>
 

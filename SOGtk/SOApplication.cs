@@ -1,6 +1,10 @@
-﻿using GLib;
+﻿using Gdk;
+
+using GLib;
 
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace SOGtk
 {
@@ -22,6 +26,7 @@ namespace SOGtk
         {
             Init();
             Register(GLib.Cancellable.Current);
+            SetIcon(Assembly.GetExecutingAssembly(), "LogoSOTech.png");
         }
 
         public new void Run()
@@ -34,5 +39,14 @@ namespace SOGtk
             AddWindow(window);
             window.Show();
         }
+
+        public void SetIcon(Gdk.Pixbuf icon) => 
+            AppSettings.ApplicationIcon = icon;
+
+        public void SetIcon(Assembly assembly, string resourceName) =>
+            SetIcon(new Pixbuf(assembly.GetResource(resourceName)));
+
+        public void SetIcon(Stream iconStream) =>
+            SetIcon(new Pixbuf(iconStream));
     }
 }
