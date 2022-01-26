@@ -3,6 +3,8 @@
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 		<TargetFramework>net6.0</TargetFramework>
+		<Authors>osnipezzini</Authors>
+		<Company>SOTech Sistemas</Company>
 	</PropertyGroup>
 
 	<ItemGroup>
